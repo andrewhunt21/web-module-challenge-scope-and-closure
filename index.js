@@ -82,9 +82,19 @@ Use the finalScore function below to do the following:
 }
 */ 
 // params inningcb, number of innings to be played
-function finalScore(/*code Here*/){
-  /*Code Here*/
+function finalScore(inningcb, number){
+  let homeScore = 0;
+  let awayScore = 0;
+  for (let i = 0; i < number; i++){
+    homeScore = homeScore + inningcb();
+    awayScore = awayScore + inningcb();
+  }
+  return {
+    Home: homeScore,
+    Away: awayScore
+  }
 }
+console.log('task 3', finalScore(inning, 9));
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
 Use the getInningScore() function below to do the following:
@@ -93,10 +103,13 @@ Use the getInningScore() function below to do the following:
 
   // inningcb
   // return an object with a score for home and away
-function getInningScore(/*Your Code Here */) {
-  /*Your Code Here */
+function getInningScore(inningcb) {
+  return {
+    Home: inningcb(),
+    Away: inningcb()
+  }
 }
-
+console.log('task 4', getInningScore(inning));
 
 /* ⚾️⚾️⚾️ Task 5: scoreboard() ⚾️⚾️⚾️
 Use the scoreboard function below to do the following:
